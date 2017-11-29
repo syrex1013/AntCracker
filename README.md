@@ -14,5 +14,4 @@ After this steps you can select option 3 to start bruteforcing login forms.
 HYDRA 
 PYTHON min. 2.4
 SHODAN (to install shodan just use easy_install: easy_install shodan) 
-
 # The end
