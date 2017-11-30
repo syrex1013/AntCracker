@@ -13,17 +13,14 @@ while ans:
 	host = raw_input('Enter number of hosts(1 = 100hosts)')
 	api = shodan.Shodan(api2)
 	count = 0
- 	while count < host:
-		try:
-
-			results = api.search('antminer port:80',page=count)
-			for result in results['matches']:
-    				print '%s' % result['ip_str']
-				with open("log2.txt","a") as myfile:
-					myfile.write('\n'+result['ip_str'])
-		except shodan.APIError, e:
-			print'ERROR: %s' % e
-		count = count + 1;
+	try:
+		results = api.search('antminer port:80')
+		for result in results['matches']:
+    			print '%s' % result['ip_str']
+			with open("log2.txt","a") as myfile:
+				myfile.write('\n'+result['ip_str'])
+	except shodan.APIError, e:
+		print'ERROR: %s' % e
 
     elif ans=="2":
       print("\n Separating hosts") 
